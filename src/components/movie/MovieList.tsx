@@ -90,7 +90,7 @@ const MovieList = () => {
 			</div>
 
 			{/* 무한 스크롤 감지 영역 */}
-			<div ref={ref} className="h-10 mt-4 bg-red-700">
+			<div ref={ref} className="h-10 mt-4">
 				{isFetchingNextPage && <p className="text-center">더 불러오는 중...</p>}
 			</div>
 		</div>
