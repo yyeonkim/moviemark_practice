@@ -5,7 +5,7 @@ const MovieListSkeleton = () => {
 				{[...Array(8)].map((_, index) => (
 					<div
 						key={index}
-						className="p-4 rounded-xl bg-gray-800 animate-pulse"
+						className="h-[282px] p-4 rounded-xl bg-gray-800 animate-pulse"
 					>
 						<div className="bg-gray-700 rounded-lg h-[228px] mb-2" />
 						<div className="bg-gray-700 h-4 w-1/2 rounded mb-2" />
