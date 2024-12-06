@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { Movie } from "@/types/movie";
-
 interface MovieCardProps {
   movie: Movie;
 }
