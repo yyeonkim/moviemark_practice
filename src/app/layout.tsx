@@ -32,6 +32,7 @@ export default function RootLayout({
 						{children}
 					</Layout>
 					<ToastMessageContainer />
+					<div id="root-modal"></div>
 				</Providers>
 			</body>
 		</html>

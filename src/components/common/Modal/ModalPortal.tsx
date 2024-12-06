@@ -22,7 +22,7 @@ const ModalPortal = ({ children }: { children: React.ReactNode }) => {
 		setMounted(true);
 	}, []);
 
-	return mounted ? createPortal(children, document.body) : null;
+	return mounted ? createPortal(children, document.getElementById("root-modal") || document.body) : null;
 };
 
 export default ModalPortal;
