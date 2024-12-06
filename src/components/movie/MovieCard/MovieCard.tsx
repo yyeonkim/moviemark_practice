@@ -7,7 +7,6 @@ interface MovieCardProps {
 }
 
 const MovieCard = ({ movie }: MovieCardProps) => {
-
 	if (!movie) return null;
 
 	return (

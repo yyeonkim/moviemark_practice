@@ -1,6 +1,5 @@
 import { type ReactNode } from "react";
 
-import Footer from "./Footer";
 import Header from "./Header";
 import ClientSidebar from "./Sidebar/ClientSidebar";
 
@@ -16,7 +15,6 @@ const Layout = ({ children }: LayoutProps) => {
 			<main className="flex flex-col flex-1 overflow-hidden container mx-auto px-4 py-8">
 				{children}
 			</main>
-			<Footer />
 		</div>
 	);
 };
