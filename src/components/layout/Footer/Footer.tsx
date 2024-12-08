@@ -5,7 +5,8 @@ import { useState } from "react";
 import Image from "next/image";
 
 import IconButton from "@/components/common/Button/IconButton";
-import SupportModal from "@/components/support/SupportModal";
+// import SupportModal from "@/components/support/SupportModal";
+import QuestionModal from "@/components/support/QuestionModal";
 
 /**
  * Footer 컴포넌트
@@ -37,7 +38,7 @@ const Footer = () => {
 				variant="icon-round"
 				onClick={() => setIsModalOpen(true)}
 			/>
-			<SupportModal
+			<QuestionModal
 				isOpen={isModalOpen}
 				onClose={() => setIsModalOpen(false)}
 			/>

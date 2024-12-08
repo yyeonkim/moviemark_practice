@@ -5,6 +5,7 @@ import type { BaseButtonProps } from "@/types/button";
 import { BASE_BUTTON_STYLES, BUTTON_SIZE_STYLES, BUTTON_VARIANT_STYLES } from "./styles";
 
 const BaseButton = memo(forwardRef<HTMLButtonElement, BaseButtonProps>(({
+	type = "button",
 	size = "md",
 	variant = "filled",
 	color = "primary",
@@ -24,6 +25,7 @@ const BaseButton = memo(forwardRef<HTMLButtonElement, BaseButtonProps>(({
 	return (
 		<button
 			ref={ref}
+			type={type}
 			disabled={disabled || isLoading}
 			className={buttonStyles}
 			{...props}

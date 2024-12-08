@@ -12,9 +12,10 @@ const Header = () => {
 				<Logo />
 			</div>
 			<div className="flex items-start gap-4">
-				<div className="py-3 px-4 text-link text-gray-50 cursor-pointer">
+				<Link href={"/movies"}>
+					<div className="py-3 px-4 text-link text-gray-50 cursor-pointer">
           Movies
-				</div>
+					</div></Link>
 				<div className="py-3 px-4 text-link text-gray-50 cursor-pointer">
           Bookmark
 				</div>
