@@ -13,15 +13,10 @@ export interface SignUpFormProps {
 }
 
 const SignUpForm = ({ onSuccess, onError }: SignUpFormProps) => {
-  const { formState, errors, isLoading, handleSubmit, handleFormChange } =
-    useSignUpForm({ onSuccess, onError });
+  const { formState, errors, isLoading, handleSubmit, handleFormChange } = useSignUpForm({ onSuccess, onError });
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-8 w-full max-w-[48.6rem]"
-      noValidate
-    >
+    <form onSubmit={handleSubmit} className="flex flex-col gap-8 w-full max-w-[48.6rem]" noValidate>
       <h1 className="text-heading-1 text-white mb-20">Sign up</h1>
       <TextInput
         label="이메일"
@@ -56,14 +51,7 @@ const SignUpForm = ({ onSuccess, onError }: SignUpFormProps) => {
         error={errors.passwordConfirm}
         disabled={isLoading}
       />
-      <BaseButton
-        type="submit"
-        size="full"
-        variant="filled"
-        color="primary"
-        isLoading={isLoading}
-        disabled={isLoading}
-      >
+      <BaseButton type="submit" size="full" variant="filled" color="primary" isLoading={isLoading} disabled={isLoading}>
         {isLoading ? "회원가입 중..." : "회원가입"}
       </BaseButton>
     </form>
