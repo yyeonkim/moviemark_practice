@@ -7,16 +7,16 @@ interface AuthState {
 }
 
 export const authState = atom<AuthState>({
-	key: "authState",
-	default: {
-		user: null,
-	},
+  key: "authState",
+  default: {
+    user: null,
+  },
 });
 
 export const isLoggedInState = selector({
-	key: "isLoggedInState",
-	get: ({ get }) => {
-		const { user } = get(authState);
-		return !!user?.sub;
-	},
+  key: "isLoggedInState",
+  get: ({ get }) => {
+    const { user } = get(authState);
+    return !!user?.sub;
+  },
 });
