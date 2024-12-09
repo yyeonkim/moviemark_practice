@@ -11,9 +11,9 @@ const MovieRating = ({ value, maxValue = 10, size = "md", className = "" }: Rati
 
 	const getSizeClass = () => {
 		switch (size) {
-		case "sm": return "text-lg";
-		case "lg": return "text-2xl";
-		default: return "text-xl";
+		case "sm": return "text-body";
+		case "lg": return "text-body-large";
+		default: return "text-body-small";
 		}
 	};
 
@@ -27,7 +27,7 @@ const MovieRating = ({ value, maxValue = 10, size = "md", className = "" }: Rati
 					{star <= normalizedValue ? "★" : "☆"}
 				</span>
 			))}
-			<span className="ml-1 text-gray-400 text-sm">
+			<span className="ml-1 text-gray-400 text-body">
 				{value.toFixed(1)}
 			</span>
 		</div>

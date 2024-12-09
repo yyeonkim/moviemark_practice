@@ -13,23 +13,27 @@ const MovieBookmark = memo(({
 	return (
 		<span
 			className={`
+				absolute
+				top-2
+				right-0
         transition-all
         duration-200
         hover:scale-110
         focus:outline-none
+				cursor-pointer
         ${className}
       `}
 		>
 			{isBookmarked ? (
 				<svg
-					className="w-6 h-6 fill-primary"
+					className="w-12 h-12 fill-primary"
 					viewBox="0 0 24 24"
 				>
 					<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
 				</svg>
 			) : (
 				<svg
-					className="w-6 h-6 fill-none stroke-gray-400 hover:stroke-primary"
+					className="w-12 h-12 fill-none stroke-gray-400 hover:stroke-primary"
 					viewBox="0 0 24 24"
 					strokeWidth="2"
 				>

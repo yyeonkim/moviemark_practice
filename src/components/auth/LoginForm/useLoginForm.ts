@@ -53,7 +53,6 @@ export const useLoginForm = ({ onSuccess, onError }: UseLoginFormProps) => {
 		setIsLoading(true);
 		try {
 			await login({ email, password });
-			showToastMessage({ type: "success", message: "로그인 성공!" });
 			onSuccess?.();
 		} catch (error) {
 			const errorMessage = error instanceof Error ? error.message : "로그인 실패";
