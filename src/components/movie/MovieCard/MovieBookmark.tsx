@@ -1,18 +1,31 @@
-import { memo } from "react";
+import { memo, useCallback, useState } from "react";
+
+import { useBookmark } from "@/hooks/useBookmark";
 
 interface MovieBookmarkProps {
+	movieId: number;
   isBookmarked: boolean;
   className?: string;
 }
 
 const MovieBookmark = memo(({
+	movieId,
 	isBookmarked,
 	className = "",
 }: MovieBookmarkProps) => {
+	const { addBookmark, deleteBookmark } = useBookmark();
+	const [bookmarked, setBookmarked] = useState<boolean>(isBookmarked);
+
+	const handleBookmark = useCallback(async () => {
+		setBookmarked(!bookmarked);
+		if (!bookmarked) await addBookmark(String(movieId));
+		else await deleteBookmark(String(movieId));
+	}, [addBookmark, bookmarked, deleteBookmark, movieId]);
 
 	return (
-		<span
-			className={`
+		<button type="button" onClick={handleBookmark}>
+			<span
+				className={`
 				absolute
 				top-2
 				right-0
@@ -23,24 +36,25 @@ const MovieBookmark = memo(({
 				cursor-pointer
         ${className}
       `}
-		>
-			{isBookmarked ? (
-				<svg
-					className="w-12 h-12 fill-primary"
-					viewBox="0 0 24 24"
-				>
-					<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
-				</svg>
-			) : (
-				<svg
-					className="w-12 h-12 fill-none stroke-gray-400 hover:stroke-primary"
-					viewBox="0 0 24 24"
-					strokeWidth="2"
-				>
-					<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
-				</svg>
-			)}
-		</span>
+			>
+				{bookmarked ? (
+					<svg
+						className="w-12 h-12 fill-primary"
+						viewBox="0 0 24 24"
+					>
+						<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+					</svg>
+				) : (
+					<svg
+						className="w-12 h-12 fill-none stroke-gray-400 hover:stroke-primary"
+						viewBox="0 0 24 24"
+						strokeWidth="2"
+					>
+						<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" />
+					</svg>
+				)}
+			</span>
+		</button>
 	);
 });
 

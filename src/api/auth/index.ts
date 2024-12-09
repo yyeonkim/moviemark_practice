@@ -1,4 +1,4 @@
-import type { AuthCredentials, AuthResponse, UserResponse } from "@/types/auth";
+import type { AuthCredentials, AuthResponse, User } from "@/types/auth";
 import { saveTokensToCookie } from "@/utils/token";
 
 import { client } from "../client";
@@ -19,8 +19,8 @@ export const signup = async (credentials: AuthCredentials): Promise<AuthResponse
 	});
 };
 
-export const getUserInfo = async (): Promise<UserResponse> => {
-	return client<UserResponse>("/users", {
+export const getUserInfo = async (): Promise<User> => {
+	return client<User>("/users", {
 		method: "GET",
 	});
 };

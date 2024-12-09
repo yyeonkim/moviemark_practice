@@ -21,7 +21,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
 			<div className="relative flex-1 flex flex-col">
 				<MovieRating value={movie.vote_average} size='lg' />
 				<MovieTitle ko_title={movie.korean_title} en_title={movie.title} />
-				<MovieBookmark isBookmarked={movie.is_bookmarked} />
+				<MovieBookmark movieId={movie.id} isBookmarked={movie.is_bookmarked} />
 			</div>
 			<MovieDate date={movie.release_date} />
 		</div>
