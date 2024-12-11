@@ -4,11 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRecoilValue } from "recoil";
 
-import HamburgerButton from "./HamburgerButton";
-import Logo from "./Logo";
-import { isLoggedInState } from "@/store/auth";
 import { useAuth } from "@/hooks/useAuth";
 import { useToastMessageContext } from "@/providers/ToastMessageProvider";
+import { isLoggedInState } from "@/store/auth";
+
+import HamburgerButton from "./HamburgerButton";
+import Logo from "./Logo";
 
 const Header = () => {
   const isLoggedIn = useRecoilValue(isLoggedInState);
@@ -23,13 +24,9 @@ const Header = () => {
       </div>
       <div className="flex items-start gap-4">
         <Link href="/movies">
-          <div className="py-3 px-4 text-link text-gray-50 cursor-pointer">
-            Movies
-          </div>
+          <div className="py-3 px-4 text-link text-gray-50 cursor-pointer">Movies</div>
         </Link>
-        <div className="py-3 px-4 text-link text-gray-50 cursor-pointer">
-          Bookmark
-        </div>
+        <div className="py-3 px-4 text-link text-gray-50 cursor-pointer">Bookmark</div>
         <div className="flex items-center gap-2">
           <div>
             <HamburgerButton />
@@ -47,15 +44,8 @@ const Header = () => {
               }
             }}
           >
-            <Image
-              src="/icons/logout.svg"
-              alt="화살표"
-              width={16}
-              height={16}
-            />
-            <span className="text-link text-gray-50">
-              {isLoggedIn ? "Logout" : "Login"}
-            </span>
+            <Image src="/icons/logout.svg" alt="화살표" width={16} height={16} />
+            <span className="text-link text-gray-50">{isLoggedIn ? "Logout" : "Login"}</span>
           </Link>
         </div>
       </div>

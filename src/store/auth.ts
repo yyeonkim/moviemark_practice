@@ -14,18 +14,9 @@ export const authState = atom<AuthState>({
 });
 
 export const isLoggedInState = selector({
-<<<<<<< HEAD
   key: "isLoggedInState",
   get: ({ get }) => {
     const { user } = get(authState);
-    return !!user?.sub;
+    return !!user?.email;
   },
 });
-=======
-	key: "isLoggedInState",
-	get: ({ get }) => {
-		const { user } = get(authState);
-		return !!user?.email;
-	},
-});
->>>>>>> jinyi/practice/day3
