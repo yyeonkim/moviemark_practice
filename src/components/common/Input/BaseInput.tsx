@@ -50,7 +50,7 @@ const BaseInput = memo(
         rightElement,
         ...props
       },
-      ref,
+      ref
     ) => {
       const getInputStyles = () => {
         const baseStyles = `
@@ -110,8 +110,8 @@ const BaseInput = memo(
           )}
         </div>
       );
-    },
-  ),
+    }
+  )
 );
 
 BaseInput.displayName = "BaseInput";

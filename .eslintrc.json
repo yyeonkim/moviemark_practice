@@ -1,17 +1,16 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "next/typescript",
-    "plugin:import/recommended",
-    "plugin:import/typescript"
-  ],
+  "extends": ["next/core-web-vitals", "next/typescript", "plugin:import/recommended", "plugin:import/typescript"],
   "plugins": ["import"],
   "rules": {
-    "quotes": ["error", "double", {
-      "avoidEscape": true,
-      "allowTemplateLiterals": false
-    }],
-    "indent": ["error", "tab"],
+    "quotes": [
+      "error",
+      "double",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": false
+      }
+    ],
+    "indent": ["off", "tab"],
     "no-mixed-spaces-and-tabs": "error",
     "no-trailing-spaces": "error",
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
@@ -22,42 +21,43 @@
     "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
     "keyword-spacing": ["error", { "before": true, "after": true }],
     "space-before-blocks": ["error", "always"],
-    "space-before-function-paren": ["error", {
-      "anonymous": "never",
-      "named": "never",
-      "asyncArrow": "always"
-    }],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
     "space-infix-ops": "error",
     "semi": ["error", "always"],
     "semi-spacing": ["error", { "before": false, "after": true }],
-    "comma-dangle": ["error", {
-      "arrays": "always-multiline",
-      "objects": "always-multiline",
-      "imports": "always-multiline",
-      "exports": "always-multiline",
-      "functions": "never"
-    }],
+    "comma-dangle": [
+      "off",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
     "no-var": "error",
     "prefer-const": "error",
-    "no-unused-vars": ["error", {
-      "vars": "all",
-      "args": "none",
-      "ignoreRestSiblings": true
-    }],
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none",
+        "ignoreRestSiblings": true
+      }
+    ],
     "object-shorthand": "error",
     "quote-props": ["error", "as-needed"],
     "import/order": [
       "error",
       {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          ["parent", "sibling"],
-          "index",
-          "object",
-          "type"
-        ],
+        "groups": ["builtin", "external", "internal", ["parent", "sibling"], "index", "object", "type"],
         "pathGroups": [
           {
             "pattern": "react",
@@ -78,10 +78,13 @@
         }
       }
     ],
-    "@typescript-eslint/no-unused-vars": ["error", {
-      "vars": "all",
-      "args": "none",
-      "ignoreRestSiblings": true
-    }]
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none",
+        "ignoreRestSiblings": true
+      }
+    ]
   }
 }
