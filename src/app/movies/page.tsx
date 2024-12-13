@@ -1,25 +1,26 @@
-import { Suspense, lazy } from "react";
+"use client";
 
-import BaseInput from "@/components/common/Input/BaseInput";
+import { Suspense, lazy, useState } from "react";
 
 // 동적 임포트를 통한 지연 로딩
 const MovieList = lazy(() => import("@/components/movie/MovieList"));
 const MovieListSkeleton = lazy(
     () => import("@/components/movie/MovieListSkeleton")
 );
+const MovieSearchInput = lazy(
+    () => import("@/components/movie/MovieSearchInput")
+);
 
 export default function MoviePage() {
+    const [searchQuery, setSearchQuery] = useState("");
+
     return (
         <Suspense fallback={<MovieListSkeleton />}>
-            {/* 영화 검색 */}
-            <BaseInput
-                name="movieTitle"
-                placeholder="Enter the movie title"
-                containerClassName="mx-5 mb-10"
-                fullWidth={false}
+            <MovieSearchInput
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
             />
-
-            <MovieList />
+            <MovieList searchQuery={searchQuery} />
         </Suspense>
     );
 }

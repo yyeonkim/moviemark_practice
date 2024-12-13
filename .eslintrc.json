@@ -18,7 +18,7 @@
         "indent": ["off", "tab"],
         "no-mixed-spaces-and-tabs": "error",
         "no-trailing-spaces": "error",
-        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+        "no-multiple-empty-lines": ["off", { "max": 1, "maxEOF": 0 }],
         "space-in-parens": ["error", "never"],
         "array-bracket-spacing": ["error", "never"],
         "object-curly-spacing": ["error", "always"],
@@ -50,7 +50,7 @@
         "no-var": "error",
         "prefer-const": "error",
         "no-unused-vars": [
-            "error",
+            "off",
             {
                 "vars": "all",
                 "args": "none",
