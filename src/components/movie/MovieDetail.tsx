@@ -1,20 +1,24 @@
 "use client";
 
-import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
+import Image from "next/image";
 
 import { getMovieDetail } from "@/api/movie";
-import MoviePoster from "./MovieCard/MoviePoster";
 
 interface MovieDetailProps {
     movieId: string;
 }
 
 export default function MovieDetail({ movieId }: MovieDetailProps) {
-    const { data: movie } = useQuery({
+    const { data: movie, isLoading } = useQuery({
         queryKey: ["movie", movieId],
         queryFn: () => getMovieDetail(movieId),
     });
+
+    if (isLoading)
+        <p className="text-center text-white text-body-small">
+            영화 불러오는 중...
+        </p>;
 
     return (
         <div className="flex gap-20 px-5 md:px-10 lg:px-0 ">
